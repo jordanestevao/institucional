@@ -1,0 +1,9 @@
+# Arquivos do sistema
+Thumbs.db
+.DS_Store
+
+# Prevenção (nunca deve haver segredo neste projeto estático, mas por precaução)
+.env
+.env.*
+*.env
+.env.local

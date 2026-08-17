@@ -1,0 +1,291 @@
+/* ============================================
+   Reset básico e configurações globais
+   ============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #2b2b2b;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  color: #1a1a1a;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #444444;
+}
+
+/* ============================================
+   Header / Navegação
+   ============================================ */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  font-weight: 500;
+  color: #333333;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #000000;
+}
+
+/* Checkbox de controle do menu mobile (escondido) */
+.menu-toggle {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-button span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 1px;
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  background-color: #f7f7f5;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  max-width: 40rem;
+  margin: 0 auto 1.75rem auto;
+  color: #555555;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #333333;
+}
+
+/* ============================================
+   Seções gerais
+   ============================================ */
+.section {
+  padding: 3.5rem 0;
+}
+
+.section-alt {
+  background-color: #f7f7f5;
+}
+
+.services-list {
+  margin-bottom: 1.25rem;
+}
+
+.services-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #444444;
+}
+
+.services-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #888888;
+}
+
+.contact-list li {
+  margin-bottom: 0.6rem;
+  color: #444444;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #dddddd;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.site-footer p {
+  color: #dddddd;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.privacy-notice {
+  color: #999999;
+  font-size: 0.8rem;
+  margin-top: 0.75rem;
+}
+
+/* ============================================
+   Responsividade
+   ============================================ */
+
+/* Telas pequenas (celular) — menu vira hambúrguer */
+@media (max-width: 640px) {
+  .menu-button {
+    display: flex;
+    z-index: 200;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.5rem 1rem;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 0.75rem 0;
+  }
+
+  .menu-toggle:checked ~ .main-nav {
+    max-height: 300px;
+  }
+
+  .hero {
+    padding: 2.75rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+}
+
+/* Telas grandes (desktop) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+}
