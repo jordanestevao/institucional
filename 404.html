@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jordan Estevão</title>
+  <meta name="robots" content="noindex">
+  <!--
+    Truque padrão para SPA de página única no GitHub Pages (sem backend,
+    sem build step): o GitHub Pages serve este arquivo para qualquer path
+    sem correspondência real no repositório (ex.: /metodologia). O path
+    pedido continua em location.pathname; guardamos ele em sessionStorage
+    e mandamos o navegador para "/", onde nav.js lê o valor guardado,
+    restaura a URL limpa com history.replaceState e rola até a seção
+    correspondente.
+  -->
+  <script>
+    (function () {
+      try {
+        sessionStorage.setItem(
+          'spaRedirectPath',
+          location.pathname + location.search + location.hash
+        );
+      } catch (err) {
+        // sessionStorage indisponível: segue o redirecionamento mesmo assim,
+        // só perde a restauração da seção específica.
+      }
+      location.replace('/');
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecionando para <a href="/">jordanestevao.com</a>…</p>
+</body>
+</html>

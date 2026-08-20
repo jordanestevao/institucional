@@ -567,6 +567,15 @@ p {
 }
 
 /* ============================================
+   Navegação por seção (nav.js): foco acessível ao
+   pular para uma seção via menu, CTA ou deep link
+   ============================================ */
+main section:focus-visible {
+  outline: 3px solid #0a58ff;
+  outline-offset: -3px;
+}
+
+/* ============================================
    Responsividade
    ============================================ */
 @media (max-width: 640px) {
