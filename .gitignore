@@ -2,7 +2,8 @@
 Thumbs.db
 .DS_Store
 
-# Prevenção (nunca deve haver segredo neste projeto estático, mas por precaução)
+# Variáveis de ambiente / segredos (prevenção — nenhum arquivo desse tipo
+# existe hoje no projeto, mas evita commit acidental no futuro)
 .env
 .env.*
 *.env

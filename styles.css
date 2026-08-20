@@ -28,7 +28,7 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul, ol {
   list-style: none;
 }
 
@@ -45,9 +45,10 @@ h1, h2, h3 {
 }
 
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.25rem;
-  color: #1a1a1a;
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+  color: #12181f;
+  text-align: center;
 }
 
 p {
@@ -78,7 +79,7 @@ p {
 .logo {
   font-weight: 700;
   font-size: 1.15rem;
-  color: #1a1a1a;
+  color: #12181f;
   margin: 0;
 }
 
@@ -89,16 +90,16 @@ p {
 
 .main-nav a {
   font-weight: 500;
+  font-size: 0.95rem;
   color: #333333;
   transition: color 0.2s ease;
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
-  color: #000000;
+  color: #0a58ff;
 }
 
-/* Checkbox de controle do menu mobile (escondido) */
 .menu-toggle {
   display: none;
 }
@@ -116,7 +117,7 @@ p {
   display: block;
   height: 2px;
   width: 100%;
-  background-color: #1a1a1a;
+  background-color: #12181f;
   border-radius: 1px;
 }
 
@@ -124,69 +125,424 @@ p {
    Hero
    ============================================ */
 .hero {
-  background-color: #f7f7f5;
-  padding: 4rem 0;
+  background-color: #0d1117;
+  color: #ffffff;
+  padding: 5.5rem 0;
   text-align: center;
 }
 
+.eyebrow {
+  color: #7fa8ff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
 .hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.75rem;
-  color: #1a1a1a;
+  font-size: 2.75rem;
+  max-width: 44rem;
+  margin: 0 auto 1.25rem auto;
+  color: #ffffff;
 }
 
 .hero-tagline {
-  font-size: 1.1rem;
-  max-width: 40rem;
-  margin: 0 auto 1.75rem auto;
-  color: #555555;
+  font-size: 1.15rem;
+  max-width: 38rem;
+  margin: 0 auto 2rem auto;
+  color: #c3c9d1;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.75rem;
+  padding: 0.85rem 1.85rem;
   border-radius: 4px;
   font-weight: 600;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background-color: #1a1a1a;
+  background-color: #0a58ff;
   color: #ffffff;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #333333;
+  background-color: #0a46cc;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: #ffffff;
 }
 
 /* ============================================
    Seções gerais
    ============================================ */
 .section {
-  padding: 3.5rem 0;
+  padding: 4.5rem 0;
 }
 
 .section-alt {
-  background-color: #f7f7f5;
+  background-color: #f5f7fa;
 }
 
-.services-list {
-  margin-bottom: 1.25rem;
+.lead-text {
+  max-width: 42rem;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  font-size: 1.05rem;
 }
 
-.services-list li {
-  position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.6rem;
+.lead-text-center {
+  margin-top: 2.5rem;
+  font-weight: 600;
+  color: #12181f;
+}
+
+/* ============================================
+   Fluxo (problema / antes-depois)
+   ============================================ */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+}
+
+.flow-step {
+  background-color: #ffffff;
+  border: 1px solid #d8dee6;
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #12181f;
+}
+
+.flow-arrow {
+  color: #9aa4b2;
+  font-size: 1.1rem;
+}
+
+.flow-diagram-vertical {
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+}
+
+.flow-diagram-vertical .flow-step {
+  border-radius: 6px;
+  text-align: center;
+}
+
+.flow-step-highlight {
+  background-color: #0a58ff;
+  border-color: #0a58ff;
+  color: #ffffff;
+}
+
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.before-after-label {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #6b7280;
+}
+
+.before-after-label-highlight {
+  color: #0a58ff;
+}
+
+/* ============================================
+   Pilares / Áreas (grids de cards)
+   ============================================ */
+.pillars-grid,
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar-card,
+.area-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+
+.section-alt .pillar-card,
+.section-alt .area-card {
+  background-color: #ffffff;
+}
+
+.pillar-index {
+  display: block;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #0a58ff;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card h3,
+.area-card h3 {
+  font-size: 1.1rem;
+  color: #12181f;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.area-card ul {
+  margin-top: 0.5rem;
+}
+
+.area-card li {
+  font-size: 0.9rem;
   color: #444444;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
-.services-list li::before {
-  content: "—";
+.area-card li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   Metodologia
+   ============================================ */
+.methodology-list {
+  max-width: 40rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.methodology-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.methodology-index {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: #0a58ff;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.methodology-step h3 {
+  font-size: 1.05rem;
+  color: #12181f;
+  margin-bottom: 0.25rem;
+}
+
+.methodology-step p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   Critério de priorização / IA fórmulas
+   ============================================ */
+.priority-formula,
+.ai-formula {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #0a58ff;
+  max-width: 40rem;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* ============================================
+   Automação + IA
+   ============================================ */
+.ai-compare {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.ai-compare-col {
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.ai-compare-col h3 {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.ai-compare-col-highlight {
+  background-color: #0d1117;
+}
+
+.ai-compare-col-highlight h3 {
+  color: #7fa8ff;
+}
+
+.ai-compare-col-highlight .ai-formula {
+  color: #ffffff;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.tag-list li {
+  background-color: #ffffff;
+  border: 1px solid #d8dee6;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  color: #333333;
+}
+
+.section-alt .tag-list li {
+  background-color: #ffffff;
+}
+
+/* ============================================
+   Oferta principal (Diagnóstico)
+   ============================================ */
+.offer-section {
+  background-color: #0d1117;
+}
+
+.offer-box {
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.offer-box h2 {
+  color: #ffffff;
+}
+
+.offer-box .lead-text {
+  color: #c3c9d1;
+}
+
+.offer-list {
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem 2rem;
+  text-align: left;
+  margin: 0 auto 2rem auto;
+}
+
+.offer-list li {
+  color: #c3c9d1;
+  font-size: 0.95rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.offer-list li::before {
+  content: "✓";
   position: absolute;
   left: 0;
-  color: #888888;
+  color: #7fa8ff;
+}
+
+/* ============================================
+   Contato / Formulário
+   ============================================ */
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 42rem;
+  margin: 2rem auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-row-full {
+  grid-column: 1 / -1;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #12181f;
+}
+
+.form-row input,
+.form-row textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #d8dee6;
+  border-radius: 4px;
+  color: #12181f;
+  resize: vertical;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #0a58ff;
+}
+
+.contact-form button {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+.contact-list {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-list li {
@@ -198,29 +554,21 @@ p {
    Footer
    ============================================ */
 .site-footer {
-  background-color: #1a1a1a;
+  background-color: #0d1117;
   color: #dddddd;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   text-align: center;
 }
 
 .site-footer p {
-  color: #dddddd;
-  margin-bottom: 0;
-  font-size: 0.9rem;
-}
-
-.privacy-notice {
-  color: #999999;
-  font-size: 0.8rem;
-  margin-top: 0.75rem;
+  color: #9aa4b2;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
 }
 
 /* ============================================
    Responsividade
    ============================================ */
-
-/* Telas pequenas (celular) — menu vira hambúrguer */
 @media (max-width: 640px) {
   .menu-button {
     display: flex;
@@ -251,15 +599,15 @@ p {
   }
 
   .menu-toggle:checked ~ .main-nav {
-    max-height: 300px;
+    max-height: 400px;
   }
 
   .hero {
-    padding: 2.75rem 0;
+    padding: 3.5rem 0;
   }
 
   .hero h1 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .hero-tagline {
@@ -271,7 +619,24 @@ p {
   }
 
   .section {
-    padding: 2.5rem 0;
+    padding: 3rem 0;
+  }
+
+  .before-after-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ai-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form button {
+    width: 100%;
   }
 }
 
@@ -279,13 +644,5 @@ p {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
-  }
-
-  .hero {
-    padding: 5rem 0;
-  }
-
-  .hero h1 {
-    font-size: 2.75rem;
   }
 }
