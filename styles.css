@@ -551,6 +551,39 @@ p {
 }
 
 /* ============================================
+   Redes sociais
+   ============================================ */
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #2b2b2b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background-color: #0a58ff;
+  border-color: #0a58ff;
+  color: #ffffff;
+}
+
+/* ============================================
    Footer
    ============================================ */
 .site-footer {
@@ -564,6 +597,15 @@ p {
   color: #9aa4b2;
   margin-bottom: 0.25rem;
   font-size: 0.85rem;
+}
+
+.site-footer .social-links {
+  margin: 1rem 0;
+}
+
+.site-footer .social-link {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #dddddd;
 }
 
 /* ============================================
