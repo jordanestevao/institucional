@@ -435,9 +435,8 @@
       <div class="container">
         <h2>Conversar sobre minha operação</h2>
         <p class="lead-text">Preencha os campos abaixo. O próximo passo é uma conversa de diagnóstico.</p>
-        <form class="contact-form" action="https://formspree.io/f/xbgrbwgg" method="POST">
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xbgrbwgg" method="POST">
           <input type="hidden" name="_subject" value="Novo pedido de diagnóstico — jordanestevao.com">
-          <input type="hidden" name="_next" value="https://jordanestevao.com/obrigado.html">
           <div class="form-row">
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" required>
@@ -467,6 +466,7 @@
             <textarea id="descricao" name="descricao" rows="4"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Solicitar diagnóstico</button>
+          <p id="contact-form-error" class="form-error" style="display:none; color:#b00020; margin-top:0.75rem;"></p>
         </form>
         <ul class="contact-list">
           <li><strong>E-mail:</strong> <a href="mailto:contato@jordanestevao.com">contato@jordanestevao.com</a></li>
@@ -504,5 +504,41 @@
       <p>© 2026. Todos os direitos reservados. <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Serviço</a></p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var errorBox = document.getElementById('contact-form-error');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        errorBox.style.display = 'none';
+        var submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        })
+          .then(function (response) {
+            if (response.ok) {
+              window.location.href = '/obrigado.html';
+              return;
+            }
+            return response.json().then(function (data) {
+              var mensagem = (data && data.errors && data.errors.length)
+                ? data.errors.map(function (e) { return e.message; }).join(', ')
+                : 'Não foi possível enviar. Tente novamente em instantes.';
+              throw new Error(mensagem);
+            });
+          })
+          .catch(function (err) {
+            errorBox.textContent = err.message || 'Não foi possível enviar. Tente novamente em instantes.';
+            errorBox.style.display = 'block';
+            submitButton.disabled = false;
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
